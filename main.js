@@ -78,6 +78,7 @@ function mostrar(){
 function Eliminar(){
 
 }
+
 const lista=new Nodo(1);
 agregarElemento(15);
 agregarElemento(20);
@@ -85,7 +86,7 @@ agregarElemento(25);
 
 mostrar();
 console.log(primero);
-*/
+
 //// Pilas ////
 
 class Nodo{
@@ -124,3 +125,47 @@ pila.imprimir();
 console.log(pila);
 
 ////////////Colas////////////
+class Cola{
+ constructor()   {
+    this.cola=[];
+ }
+ agregarElementoCola(valor){
+    this.cola.push(valor);
+ }
+ eliminarElementoCola(){
+    return this.cola.shift();
+ }
+ imprimir(){
+    console.log(this.cola);
+
+ }
+
+}   
+let cola = new Cola;
+cola.agregarElementoCola("pera");
+cola.agregarElementoCola("manzana");
+cola.agregarElementoCola(25);
+cola.imprimir()
+
+
+*/ 
+function imprimir(){
+    document.getElementById("listado").style.display="block";
+    document.getElementById("listado").textContent=lista2;
+}
+function enviarFormulario(){
+    let valor = document.getElementById("tarea").value;
+    listado.push(valor);
+    console.log(listado);
+    lista2=listado.join('-');
+    console.log(lista2);
+    imprimir()
+    
+}
+
+let listado=[];
+let lista2="";
+
+document.getElementById("btnAgregar").addEventListener("click",enviarFormulario);
+document.getElementById("listado").textContent=lista2.toString;
+
